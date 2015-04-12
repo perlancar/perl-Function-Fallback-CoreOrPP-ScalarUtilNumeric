@@ -71,6 +71,21 @@ pure-perl replacement for the XS module L<Scalar::Util::Numeric>, in the case
 when Data::Sah needs to generate code that uses PP modules instead of XS ones.
 
 
+=head1 FUNCTIONS
+
+=head2 isint
+
+=head2 isfloat
+
+=head2 isnum
+
+=head2 isneg
+
+=head2 isinf
+
+=head2 isnan
+
+
 =head1 SEE ALSO
 
 L<Data::Sah>
