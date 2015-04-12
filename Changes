@@ -1,5 +1,14 @@
 Revision history for Scalar-Util-Numeric-PP
 
+0.02    2015-04-12 (PERLANCAR)
+
+        - Rename module/dist from Function-Fallback-CoreOrPP-ScalarUtilNumeric
+          to Scalar-Util-Numeric-PP.
+
+        - Fix conformance of isfloat() (1, 1.0, or 1.1e1 is not float, but "1.0"
+          and "1.1e1" are).
+
+
 0.01    2015-04-12 (PERLANCAR)
 
         - First release.
