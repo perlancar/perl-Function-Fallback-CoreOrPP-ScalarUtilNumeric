@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use Function::Fallback::CoreOrPP::ScalarUtilNumeric
+use Scalar::Util::Numeric::PP
     qw(isint isnum isnan isinf isneg isfloat);
 use Test::More 0.98;
 
@@ -15,16 +15,18 @@ ok(!isint(undef));
 ok(!isint("a"));
 ok(!isint("1.1"));
 
-ok( isfloat(1));
-ok( isfloat(-23));
-ok( isfloat("+1"));
 ok( isfloat(1.1));
+ok( isfloat("1.0"));
 ok( isfloat(-23.4));
-ok( isfloat(-5.6e7));
+ok( isfloat(-5.61e1));
 ok( isfloat(5.6e-7));
 ok( isfloat("-inf"));
 ok( isfloat("NaN"));
 ok(!isfloat(undef));
+ok(!isfloat(1));
+ok(!isfloat(1.0));
+ok(!isfloat(-23));
+ok(!isfloat("+1"));
 ok(!isfloat("a"));
 ok(!isfloat("1,1"));
 

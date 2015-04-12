@@ -1,4 +1,4 @@
-package Function::Fallback::CoreOrPP::ScalarUtilNumeric;
+package Scalar::Util::Numeric::PP;
 
 # DATE
 # VERSION
@@ -47,13 +47,18 @@ sub isneg($) {
 }
 
 sub isnum($) {
-    goto &isfloat;
+    local $_ = shift;
+    return 0 unless defined;
+    return 1 if isint($_);
+    return 1 if isfloat($_);
+    0;
 }
 
 sub isfloat($) {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A[+-]?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\z/;
+    return 1 if /\A[+-]?(?:0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?\z/
+        && $1 || $2;
     return 1 if isnan($_) || isinf($_);
     0;
 }
@@ -69,6 +74,8 @@ sub isfloat($) {
 This module is written mainly for the convenience of L<Data::Sah>, as a drop-in
 pure-perl replacement for the XS module L<Scalar::Util::Numeric>, in the case
 when Data::Sah needs to generate code that uses PP modules instead of XS ones.
+
+Not all functions from Scalar::Util::Numeric have been provided.
 
 
 =head1 FUNCTIONS
