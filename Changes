@@ -1,5 +1,10 @@
 Revision history for Scalar-Util-Numeric-PP
 
+0.03    2015-06-16 (PERLANCAR)
+
+	- [Bugfix] Allow .1 like Scalar::Util::Numeric.
+
+
 0.02    2015-04-12 (PERLANCAR)
 
         - Rename module/dist from Function-Fallback-CoreOrPP-ScalarUtilNumeric
