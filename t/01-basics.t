@@ -14,6 +14,7 @@ ok( isint("+1"));
 ok(!isint(undef));
 ok(!isint("a"));
 ok(!isint("1.1"));
+ok(!isint("1_000"));
 
 ok( isfloat(1.1));
 ok( isfloat("1.0"));
@@ -32,6 +33,7 @@ ok(!isfloat(-23));
 ok(!isfloat("+1"));
 ok(!isfloat("a"));
 ok(!isfloat("1,1"));
+ok(!isint("1_000.1"));
 
 ok( isnum(1));
 ok( isnum(-23));
@@ -45,6 +47,8 @@ ok( isnum("NaN"));
 ok(!isnum(undef));
 ok(!isnum("a"));
 ok(!isnum("1,1"));
+ok(!isnum("1_000"));
+ok(!isnum("1_000.1"));
 
 ok( isnan("nan"));
 ok( isnan("+NAN"));
