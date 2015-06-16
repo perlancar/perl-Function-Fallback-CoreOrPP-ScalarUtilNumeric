@@ -57,8 +57,9 @@ sub isnum($) {
 sub isfloat($) {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A[+-]?(?:0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?\z/
-        && $1 || $2;
+    return 1 if /\A[+-]?
+                 (?: (?:0|[1-9][0-9]*)(\.[0-9]+)? | (\.[0-9]+) )
+                 ([eE][+-]?[0-9]+)?\z/x && $1 || $2 || $3;
     return 1 if isnan($_) || isinf($_);
     0;
 }
