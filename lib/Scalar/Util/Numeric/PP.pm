@@ -21,21 +21,21 @@ our @EXPORT_OK = qw(
 sub isint {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A[+-]?(?:0|[1-9][0-9]*)\z/;
+    return 1 if /\A\s*[+-]?(?:0|[1-9][0-9]*)\s*\z/s;
     0;
 }
 
 sub isnan($) {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A\s*[+-]?nan\s*\z/i;
+    return 1 if /\A\s*[+-]?nan\s*\z/is;
     0;
 }
 
 sub isinf($) {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A\s*[+-]?inf(?:inity)?\s*\z/i;
+    return 1 if /\A\s*[+-]?inf(?:inity)?\s*\z/is;
     0;
 }
 
@@ -57,9 +57,9 @@ sub isnum($) {
 sub isfloat($) {
     local $_ = shift;
     return 0 unless defined;
-    return 1 if /\A[+-]?
+    return 1 if /\A\s*[+-]?
                  (?: (?:0|[1-9][0-9]*)(\.[0-9]+)? | (\.[0-9]+) )
-                 ([eE][+-]?[0-9]+)?\z/x && $1 || $2 || $3;
+                 ([eE][+-]?[0-9]+)?\s*\z/sx && $1 || $2 || $3;
     return 1 if isnan($_) || isinf($_);
     0;
 }
