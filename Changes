@@ -1,5 +1,11 @@
 Revision history for Scalar-Util-Numeric-PP
 
+0.04    2016-01-22 (PERLANCAR)
+
+	- Improve compliance with Scalar::Util::Numeric (leading/trailing
+	  blanks are allowed no numbers, newlines included).
+
+
 0.03    2015-06-16 (PERLANCAR)
 
 	- [Bugfix] Allow .1 like Scalar::Util::Numeric.
