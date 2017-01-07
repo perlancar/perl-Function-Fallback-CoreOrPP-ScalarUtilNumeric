@@ -1,5 +1,3 @@
-Revision history for Scalar-Util-Numeric-PP
-
 0.04    2016-01-22 (PERLANCAR)
 
 	- Improve compliance with Scalar::Util::Numeric (leading/trailing
