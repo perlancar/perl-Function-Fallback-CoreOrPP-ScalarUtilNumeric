@@ -1,6 +1,6 @@
 0.04    2016-01-22 (PERLANCAR)
 
-	- Improve compliance with Scalar::Util::Numeric (leading/trailing
+	- Improve compatibility with Scalar::Util::Numeric (leading/trailing
 	  blanks are allowed on numbers, newlines included).
 
 
