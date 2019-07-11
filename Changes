@@ -1,15 +1,15 @@
-0.04    2016-01-22 (PERLANCAR)
+0.04    2016-01-22  Released-By: PERLANCAR
 
 	- Improve compatibility with Scalar::Util::Numeric (leading/trailing
 	  blanks are allowed on numbers, newlines included).
 
 
-0.03    2015-06-16 (PERLANCAR)
+0.03    2015-06-16  Released-By: PERLANCAR
 
 	- [Bugfix] Allow ".1" like Scalar::Util::Numeric.
 
 
-0.02    2015-04-12 (PERLANCAR)
+0.02    2015-04-12  Released-By: PERLANCAR
 
         - Rename module/dist from Function-Fallback-CoreOrPP-ScalarUtilNumeric
           to Scalar-Util-Numeric-PP.
@@ -18,6 +18,6 @@
           and "1.1e1" are).
 
 
-0.01    2015-04-12 (PERLANCAR)
+0.01    2015-04-12  Released-By: PERLANCAR
 
         - First release.
